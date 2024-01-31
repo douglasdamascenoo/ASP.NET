@@ -2,7 +2,7 @@
 Comandos e configurações básicas para a criação de projetos em ASP.NET
 
 ### Projeto ASP.NET
-1. Criar Diretório da solução
+1. Criar diretório da solução
 ```powershell
 mkdir MeuApp
 ```
