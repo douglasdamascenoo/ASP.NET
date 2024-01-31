@@ -1,5 +1,5 @@
 # ASP.NET
-Comandos básicos para a criação de projetos em ASP.NET
+Comandos e configurações básicas para a criação de projetos em ASP.NET
 
 ### Projeto ASP.NET
 1. Criar Diretório da solução
@@ -53,7 +53,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 ### Migrations
 ```powershell
 dotnet ef migrations add initial
-dotnet ef database update 										
+dotnet ef database update
 ```
 
 ### Publicação
@@ -103,3 +103,47 @@ var key = Encoding.ASCII.GetBytes(Settings.Secret);
 	app.UseAuthorization();
 ```
 - Para Autenticar: No Header do Request >> `Authorization: Bearer VALOR_TOKEN`
+
+
+
+### Outros utilitários CLI .NET 
+- Listar todas as versões instaladas do .NET
+```powershell
+dotnet --info
+```
+
+- Listar SDKs instalados
+```powershell
+dotnet --list-sdks
+```
+
+- Listar Runtimes instalados
+```powershell
+dotnet --list-runtimes
+```
+
+- Criar projeto com versão específica do .NET
+```powershell
+dotnet new web -o MyWebApp -f netX.X
+```
+
+- Criar arquivo `global.json` na raiz da pasta de projetos para rodar todos projetos com a versão uma única versão
+```powershell
+{
+	"projects": ["src"],
+	"sdk": {
+		"version": "^6.0.201"
+	}
+}
+```
+
+- Migrations passando o contexto como parâmetro
+```powershell
+dotnet ef migrations add MYCOMMENT --context MYCONTEXT
+dotnet ef database update --context MYCONTEXT
+```
+
+- Habiliar certificados de dev
+```powershell
+dotnet dev-certs https --check --trust
+```
