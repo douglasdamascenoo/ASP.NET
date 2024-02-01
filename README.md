@@ -1,7 +1,7 @@
 # ASP.NET
 Comandos e configurações básicas para a criação de projetos em ASP.NET
 
-### Projeto ASP.NET
+### Criar Projeto ASP.NET
 1. Criar diretório da solução
 ```powershell
 mkdir MeuApp
@@ -56,11 +56,6 @@ dotnet ef migrations add initial
 dotnet ef database update
 ```
 
-### Publicação
-```powershell
-dotnet publish -c Release
-```
-
 ### Annotations
 ```csharp
 DataAnnotations && DataAnnotations.Schema || IEntityTypeConfiguration
@@ -104,6 +99,10 @@ var key = Encoding.ASCII.GetBytes(Settings.Secret);
 ```
 - Para Autenticar: No Header do Request >> `Authorization: Bearer VALOR_TOKEN`
 
+### Gerar artefatos de Publicação
+```powershell
+dotnet publish -c Release -o C:\inetpub\wwwroot\dir
+```
 
 
 ### Outros utilitários CLI .NET 
